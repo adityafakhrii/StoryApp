@@ -1,8 +1,9 @@
 package com.adityafakhri.storyapp.ui.login
 
+import android.animation.AnimatorSet
+import android.animation.ObjectAnimator
 import android.content.Intent
 import android.os.Bundle
-import android.transition.TransitionInflater
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -29,13 +30,6 @@ class LoginFragment : Fragment() {
 
     private var viewModel: LoginViewModel? = null
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        val animation = TransitionInflater.from(requireContext()).inflateTransition(android.R.transition.move)
-        sharedElementEnterTransition = animation
-        sharedElementReturnTransition = animation
-    }
-
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?) : View {
         _binding = FragmentLoginBinding.inflate(inflater, container, false)
         return binding.root
@@ -43,6 +37,8 @@ class LoginFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        playAnimation()
+
         val pref = AuthPreferences.getInstance((activity as AuthActivity).dataStore)
 
         val authViewModel = ViewModelProvider(this, ViewModelAuthFactory(pref))[AuthViewModel::class.java]
@@ -81,7 +77,7 @@ class LoginFragment : Fragment() {
                 !email.matches(Const.emailFormat) -> {
                     Toast.makeText(requireContext(), getString(R.string.email_invalid), Toast.LENGTH_SHORT).show()
                 }
-                password.length <= 8 -> {
+                password.length < 8 -> {
                     Toast.makeText(requireContext(), getString(R.string.password_invalid), Toast.LENGTH_SHORT).show()
                 }
                 email.isEmpty() or password.isEmpty() -> {
@@ -99,6 +95,26 @@ class LoginFragment : Fragment() {
                 commit()
             }
         }
+    }
+
+    private fun playAnimation() {
+        ObjectAnimator.ofFloat(binding.imageView, View.TRANSLATION_X, -40f, 40f).apply {
+            duration = 4000
+            repeatCount = ObjectAnimator.INFINITE
+            repeatMode = ObjectAnimator.REVERSE
+        }.start()
+
+        val title = ObjectAnimator.ofFloat(binding.titleLoginTextView, View.ALPHA, 1f).setDuration(500)
+        val message = ObjectAnimator.ofFloat(binding.messageTextView, View.ALPHA, 1f).setDuration(500)
+        val emailEditTextLayout = ObjectAnimator.ofFloat(binding.etEmail, View.ALPHA, 1f).setDuration(500)
+        val passwordEditTextLayout = ObjectAnimator.ofFloat(binding.etPassword, View.ALPHA, 1f).setDuration(500)
+        val login = ObjectAnimator.ofFloat(binding.btnLogin, View.ALPHA, 1f).setDuration(500)
+        val register = ObjectAnimator.ofFloat(binding.btnRegister, View.ALPHA, 1f).setDuration(500)
+
+        AnimatorSet().apply {
+            playSequentially(title, message, emailEditTextLayout, passwordEditTextLayout, login, register)
+            startDelay = 500
+        }.start()
     }
 
     companion object {
