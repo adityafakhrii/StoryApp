@@ -43,13 +43,14 @@ class MainActivity : AppCompatActivity() {
         viewModel = ViewModelProvider(this, ViewModelGeneralFactory(this))[MainViewModel::class.java]
 
         authViewModel.getUserPreferences(Const.UserPreferences.Token.name).observe(this) { token ->
-            tokenKey = StringBuilder("Bearer ").append(token).toString()
-            viewModel?.getStoryList(tokenKey)
+            if (token != "Not Set") {
+                tokenKey = StringBuilder("Bearer ").append(token).toString()
+                viewModel?.getStoryList(tokenKey)
+            }
         }
 
         setRv()
         getAllStories()
-
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -64,6 +65,7 @@ class MainActivity : AppCompatActivity() {
         when (menuItem.itemId) {
             R.id.menu_logout -> {
                 authViewModel.clearUserPreferences()
+                Toast.makeText(applicationContext, getString(R.string.logout_sucess), Toast.LENGTH_SHORT).show()
                 Intent(this, AuthActivity::class.java).also { intent ->
                     startActivity(intent)
                     finish()
@@ -87,8 +89,7 @@ class MainActivity : AppCompatActivity() {
             }
 
             error.observe(this@MainActivity) {
-                if (it.isNotEmpty()) Toast.makeText(applicationContext, getString(R.string.login_failed), Toast.LENGTH_SHORT).show()
-            }
+                if (it.isNotEmpty()) Toast.makeText(applicationContext, it, Toast.LENGTH_SHORT).show() }
 
             storyList.observe(this@MainActivity) {
                 listStoryAdapter.apply{
@@ -100,7 +101,6 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setRv() {
-
         binding.rvStory.apply {
             layoutManager = LinearLayoutManager(this@MainActivity)
             adapter = listStoryAdapter

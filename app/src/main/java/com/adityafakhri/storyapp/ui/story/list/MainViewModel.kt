@@ -16,7 +16,6 @@ import retrofit2.Response
 
 class MainViewModel(val context: Context) : ViewModel() {
     var loading = MutableLiveData(View.GONE)
-//    var isSuccessUploadStory = MutableLiveData(false)
     private val _storyList = MutableLiveData<List<ListStoryItem>>()
     val storyList: LiveData<List<ListStoryItem>> = _storyList
 
@@ -29,11 +28,9 @@ class MainViewModel(val context: Context) : ViewModel() {
         val client = ApiConfig.getApiService().getListStory(token, 20)
         client.enqueue(object : Callback<StoryResponse> {
             override fun onResponse(call: Call<StoryResponse>, response: Response<StoryResponse>) {
-                if (response.isSuccessful) {
-                    _storyList.postValue(response.body()?.listStory)
-                } else {
-                    error.postValue("Error ${response.code()} : ${response.message()}")
-                }
+                if (response.isSuccessful) _storyList.postValue(response.body()?.listStory)
+                else error.postValue("Error ${response.code()} : ${response.message()}")
+
                 loading.postValue(View.GONE)
             }
 

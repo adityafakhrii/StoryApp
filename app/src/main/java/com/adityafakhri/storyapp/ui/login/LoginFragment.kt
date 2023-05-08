@@ -50,18 +50,18 @@ class LoginFragment : Fragment() {
         viewModel = ViewModelProvider(this, ViewModelGeneralFactory((activity as AuthActivity)))[LoginViewModel::class.java]
 
         viewModel?.let { vModel ->
-            vModel.loginResult.observe(viewLifecycleOwner) { login ->
+            vModel.loginResult.observe(viewLifecycleOwner) {
                 authViewModel.setUserPreferences(
-                    login.loginResult.token
+                    it.loginResult.token
                 )
             }
-            vModel.error.observe(viewLifecycleOwner) { error ->
-                if (error.isEmpty()) {
+            vModel.error.observe(viewLifecycleOwner) {
+                if (it.isNotEmpty()) {
                     Toast.makeText(activity, getString(R.string.login_failed), Toast.LENGTH_SHORT).show()
                 }
             }
-            vModel.loading.observe(viewLifecycleOwner) { state ->
-                binding.viewLoading.visibility = state
+            vModel.loading.observe(viewLifecycleOwner) {
+                binding.viewLoading.visibility = it
             }
         }
 

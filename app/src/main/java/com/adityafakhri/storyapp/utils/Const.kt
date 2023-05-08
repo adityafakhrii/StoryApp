@@ -3,7 +3,7 @@ package com.adityafakhri.storyapp.utils
 object Const {
 
     enum class UserPreferences {
-        Uid, Token, Name, Email
+        Token, Name, Email
     }
 
     enum class StoryDetail {

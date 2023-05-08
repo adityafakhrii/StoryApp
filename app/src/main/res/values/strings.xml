@@ -2,8 +2,6 @@
     <string name="app_name">Story App</string>
 
     <string name="login">Masuk</string>
-    <string name="message_welcome_page">Mau belajar Android, iOS, Machine Learning, Cloud, Front-End, Back-End, dan bidang IT lainnya? Di Dicoding aja!</string>
-    <string name="title_welcome_page">Selamat datang di Dicoding!</string>
     <string name="email">Email</string>
     <string name="password">Password</string>
     <string name="message_login_page">Tapi, login dulu ya!</string>
@@ -46,4 +44,5 @@
     <string name="add_img_desc">Silakan masukkan berkas gambar dan deskripsi</string>
     <string name="upload_success">Upload story berhasil</string>
     <string name="upload_failed">Upload story gagal, silahkan coba lagi</string>
+    <string name="logout_sucess">Logout berhasil</string>
 </resources>

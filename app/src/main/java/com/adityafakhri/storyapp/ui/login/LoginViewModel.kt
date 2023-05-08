@@ -25,7 +25,8 @@ class LoginViewModel(val context: Context) : ViewModel() {
         val client = ApiConfig.getApiService().userLogin(email, password)
         client.enqueue(object : Callback<LoginResponse> {
             override fun onResponse(call: Call<LoginResponse>, response: Response<LoginResponse>) {
-                if (response.code() == 200) loginResult.postValue(response.body()) else error.postValue("ERROR ${response.code()} : ${response.message()}")
+                if (response.code() == 200) loginResult.postValue(response.body())
+                else error.postValue("ERROR ${response.code()} : ${response.message()}")
                 loading.postValue(View.GONE)
             }
 
