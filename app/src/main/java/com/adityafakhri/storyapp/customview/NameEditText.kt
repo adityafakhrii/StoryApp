@@ -1,17 +1,14 @@
 package com.adityafakhri.storyapp.customview
 
 import android.content.Context
-import android.graphics.drawable.Drawable
 import android.text.Editable
-import android.text.InputType
 import android.text.TextWatcher
 import android.util.AttributeSet
 import android.util.Patterns
 import androidx.appcompat.widget.AppCompatEditText
-import androidx.core.content.ContextCompat
 import com.adityafakhri.storyapp.R
 
-class EmailEditText : AppCompatEditText {
+class NameEditText : AppCompatEditText {
 
     constructor(context: Context) : super(context) {
         init()
@@ -30,16 +27,15 @@ class EmailEditText : AppCompatEditText {
     }
 
     private fun init() {
-        setHint(R.string.email_hint)
-        setAutofillHints(AUTOFILL_HINT_EMAIL_ADDRESS)
+        setHint(R.string.name_hint)
 
         addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
             override fun afterTextChanged(p0: Editable?) {}
 
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-                if (!s.isNullOrEmpty() && !Patterns.EMAIL_ADDRESS.matcher(s).matches())
-                    error = context.getString(R.string.et_email_error_message)
+                if (!s.isNullOrEmpty())
+                    error = context.getString(R.string.et_name_error_message)
             }
         })
     }

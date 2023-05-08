@@ -8,8 +8,10 @@
     <string name="title_login">Sudah siap berbagi cerita belajarmu di Dicoding?</string>
     <string name="name">Nama</string>
 
-    <string name="et_email_error_message">Alamat email tidak sesuai</string>
-    <string name="et_password_error_message">Kata sandi harus lebih dari 6 karakter</string>
+    <string name="et_email_error_message">Email tidak sesuai</string>
+    <string name="et_password_error_message">Password harus lebih dari 8 karakter</string>
+    <string name="et_name_error_message">Nama harus diisi</string>
+
     <string name="username">Aditya Fakhri Riansyah</string>
     <string name="story_title_description">Deskripsi</string>
     <string name="img_story_description">Gambar Story</string>
@@ -45,4 +47,7 @@
     <string name="upload_success">Upload story berhasil</string>
     <string name="upload_failed">Upload story gagal, silahkan coba lagi</string>
     <string name="logout_sucess">Logout berhasil</string>
+    <string name="email_hint">Masukkan email anda...</string>
+    <string name="password_hint">Masukkan password anda...</string>
+    <string name="name_hint">Silahkan tulis nama anda...</string>
 </resources>

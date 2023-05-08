@@ -13,9 +13,6 @@ import androidx.core.content.ContextCompat
 import com.adityafakhri.storyapp.R
 
 class PassEditText : AppCompatEditText {
-
-    private lateinit var passwordIconDrawable: Drawable
-
     constructor(context: Context) : super(context) {
         init()
     }
@@ -38,14 +35,8 @@ class PassEditText : AppCompatEditText {
     }
 
     private fun init() {
-        passwordIconDrawable =
-            ContextCompat.getDrawable(context, R.drawable.baseline_password_24) as Drawable
-        inputType = InputType.TYPE_TEXT_VARIATION_PASSWORD
-        compoundDrawablePadding = 16
-
-        setHint(R.string.password)
+        setHint(R.string.password_hint)
         setAutofillHints(AUTOFILL_HINT_PASSWORD)
-        setDrawable(passwordIconDrawable)
 
         addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
@@ -56,14 +47,5 @@ class PassEditText : AppCompatEditText {
                     error = context.getString(R.string.et_password_error_message)
             }
         })
-    }
-
-    private fun setDrawable(
-        start: Drawable? = null,
-        top: Drawable? = null,
-        end: Drawable? = null,
-        bottom: Drawable? = null
-    ) {
-        setCompoundDrawablesWithIntrinsicBounds(start, top, end, bottom)
     }
 }
