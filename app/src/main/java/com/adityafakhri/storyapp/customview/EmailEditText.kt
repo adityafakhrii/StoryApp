@@ -1,14 +1,11 @@
 package com.adityafakhri.storyapp.customview
 
 import android.content.Context
-import android.graphics.drawable.Drawable
 import android.text.Editable
-import android.text.InputType
 import android.text.TextWatcher
 import android.util.AttributeSet
 import android.util.Patterns
 import androidx.appcompat.widget.AppCompatEditText
-import androidx.core.content.ContextCompat
 import com.adityafakhri.storyapp.R
 
 class EmailEditText : AppCompatEditText {

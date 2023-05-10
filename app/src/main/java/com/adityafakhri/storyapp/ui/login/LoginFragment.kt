@@ -117,6 +117,11 @@ class LoginFragment : Fragment() {
         }.start()
     }
 
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+    }
+
     companion object {
         fun newInstance() = LoginFragment()
     }
