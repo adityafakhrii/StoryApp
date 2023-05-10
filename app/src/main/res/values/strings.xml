@@ -1,53 +1,48 @@
 <resources>
-    <string name="app_name">Story App</string>
 
-    <string name="login">Masuk</string>
+    <!--    Login & Register-->
+    <string name="login">Login</string>
     <string name="email">Email</string>
     <string name="password">Password</string>
-    <string name="message_login_page">Tapi, login dulu ya!</string>
-    <string name="title_login">Sudah siap berbagi cerita belajarmu di Dicoding?</string>
-    <string name="name">Nama</string>
-
-    <string name="et_email_error_message">Email tidak sesuai</string>
-    <string name="et_password_error_message">Password harus lebih dari 8 karakter</string>
-    <string name="et_name_error_message">Nama harus diisi</string>
-
-    <string name="username">Aditya Fakhri Riansyah</string>
-    <string name="story_title_description">Deskripsi</string>
-    <string name="img_story_description">Gambar Story</string>
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="title_register">Silahkan daftar terlebih dahulu</string>
-    <string name="message_register_page">Isi dengan lengkap</string>
-    <string name="register">Daftar</string>
-    <string name="login_success">Login Berhasil</string>
-    <string name="login_failed">Login Gagal, Silahkan Coba Lagi</string>
-    <string name="register_success">Registrasi Berhasil, Silahkan Login</string>
-    <string name="register_failed">Registrasi Gagal, Silahkan Coba Lagi</string>
-    <string name="logout">Logout</string>
-    <string name="not_found">Data tidak ditemukan</string>
-    <string name="error_story">Error</string>
-    <string name="API_error_fetch_data">Error fetch data</string>
-    <string name="field_empty">Semua kolom harus diisi</string>
-    <string name="email_invalid">Format email salah! silahkan perbaiki</string>
-    <string name="password_invalid">Password harus lebih dari 8 karakter</string>
-    <string name="text_create_account">Belum punya akun?</string>
-    <string name="register_button">Daftar</string>
+    <string name="message_login_page">But, Login first!</string>
+    <string name="title_login">Are you ready to share your learning stories in Dicoding?</string>
+    <string name="login_success">Login success</string>
+    <string name="login_failed">Login failed, please try again</string>
+    <string name="text_create_account">Don\'t have an account yet?</string>
+    <string name="title_register">Please register first</string>
+    <string name="message_register_page">Fill in completely</string>
+    <string name="register">register</string>
+    <string name="register_success">Registration successful, please login</string>
+    <string name="register_failed">Registration failed, please try again</string>
+    <string name="email_invalid">The email format is wrong, please fix it</string>
+    <string name="password_invalid">Password must be more than 8 characters</string>
+    <string name="name_invalid">Name is required</string>
     <string name="login_button">Login</string>
-    <string name="text_login">Sudah punya akun?</string>
-    <string name="name_detail">Detail Story - %s</string>
-    <string name="select_img">Pilih Gambar</string>
-    <string name="select_camera">Kamera</string>
-    <string name="select_gallery">Galeri</string>
-    <string name="API_error_send_payload">Error saat upload gambar</string>
-    <string name="permission_denied">Tidak mendapatkan permission.</string>
-    <string name="choose_picture">Choose a Picture</string>
-    <string name="add_story">Tambah Story</string>
+    <string name="text_login">Already have an account?</string>
+    <string name="field_empty">All fields must be filled in</string>
+    <string name="email_hint">Enter your e-mail...</string>
+    <string name="password_hint">Enter your password...</string>
+    <string name="name_hint">Please write your name...</string>
+
+    <!--    Story-->
+    <string name="logout">Logout</string>
+    <string name="username">Aditya Fakhri Riansyah</string>
+    <string name="story_title_description">Description</string>
+    <string name="img_story_description">Story Image</string>
+    <string name="not_found">Data not found</string>
+    <string name="error_fetch_data">Error fetch data</string>
+    <string name="name_detail">Story Details - %s</string>
+    <string name="select_camera">Camera</string>
+    <string name="select_gallery">Gallery</string>
+    <string name="error_upload">Error saat upload gambar</string>
+    <string name="permission_denied">Did not get permissions</string>
+    <string name="choose_picture">Choose an image</string>
+    <string name="add_story">Add stories</string>
     <string name="upload">Upload</string>
-    <string name="add_img_desc">Silakan masukkan berkas gambar dan deskripsi</string>
-    <string name="upload_success">Upload story berhasil</string>
-    <string name="upload_failed">Upload story gagal, silahkan coba lagi</string>
-    <string name="logout_sucess">Logout berhasil</string>
-    <string name="email_hint">Masukkan email anda...</string>
-    <string name="password_hint">Masukkan password anda...</string>
-    <string name="name_hint">Silahkan tulis nama anda...</string>
+    <string name="add_img_desc">Please enter an image file and a description</string>
+    <string name="upload_success">Story upload was successful</string>
+    <string name="upload_failed">Story upload failed, please try again</string>
+    <string name="logout_sucess">Logout successful</string>
+    <string name="app_name">Story App</string>
+
 </resources>

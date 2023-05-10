@@ -15,10 +15,7 @@ class RegisterViewModel(val context: Context) : ViewModel() {
 
     var loading = MutableLiveData(View.GONE)
     val error = MutableLiveData("")
-
     val registerResult = MutableLiveData<RegisterResponse>()
-
-    private val TAG = RegisterViewModel::class.simpleName
 
     fun register(name: String, email: String, password: String) {
         loading.postValue(View.VISIBLE)
@@ -36,4 +33,8 @@ class RegisterViewModel(val context: Context) : ViewModel() {
             }
         })
     }
+    companion object{
+        const val TAG = "RegisterViewModel"
+    }
+
 }

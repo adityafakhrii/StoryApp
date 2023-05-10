@@ -21,9 +21,8 @@ import java.io.File
 class AddStoryViewModel(val context: Context) : ViewModel() {
 
     var loading = MutableLiveData(View.GONE)
-    var isSuccessUpload = MutableLiveData(false)
     var error = MutableLiveData("")
-    private val TAG = AddStoryViewModel::class.simpleName
+    var isSuccessUpload = MutableLiveData(false)
 
     fun uploadNewStory(token: String, file: File, description: String) {
         loading.postValue(View.VISIBLE)
@@ -50,8 +49,12 @@ class AddStoryViewModel(val context: Context) : ViewModel() {
             override fun onFailure(call: Call<AddStoryResponse>, t: Throwable) {
                 loading.postValue(View.GONE)
                 Log.e(TAG, "onFailure Call: ${t.message}")
-                error.postValue("${context.getString(R.string.API_error_send_payload)} : ${t.message}")
+                error.postValue("${context.getString(R.string.error_upload)} : ${t.message}")
             }
         })
+    }
+
+    companion object{
+        const val TAG = "AddStoryViewModel"
     }
 }

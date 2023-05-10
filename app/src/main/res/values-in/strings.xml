@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Aplikasi Cerita</string>
+
+    <!--    Login & Register-->
+    <string name="login">Masuk</string>
+    <string name="email">Email</string>
+    <string name="password">Kata Sandi</string>
+    <string name="message_login_page">Tapi, login dulu ya!</string>
+    <string name="title_login">Sudah siap berbagi cerita belajarmu di Dicoding?</string>
+    <string name="login_success">Login berhasil</string>
+    <string name="login_failed">Login gagal, silahkan coba lagi</string>
+    <string name="text_create_account">Belum punya akun?</string>
+    <string name="title_register">Silahkan daftar terlebih dahulu</string>
+    <string name="message_register_page">Isi dengan lengkap</string>
+    <string name="register">Daftar</string>
+    <string name="register_success">Registrasi berhasil, silahkan login</string>
+    <string name="register_failed">Registrasi gagal, silahkan coba lagi</string>
+    <string name="email_invalid">Format email salah, silahkan perbaiki</string>
+    <string name="password_invalid">Password harus lebih dari 8 karakter</string>
+    <string name="name_invalid">Nama harus diisi</string>
+    <string name="login_button">Masuk</string>
+    <string name="text_login">Sudah punya akun?</string>
+    <string name="field_empty">Semua kolom harus diisi</string>
+    <string name="email_hint">Masukkan email anda...</string>
+    <string name="password_hint">Masukkan password anda...</string>
+    <string name="name_hint">Silahkan tulis nama anda...</string>
+
+    <!--    Story-->
+    <string name="logout">Keluar</string>
+    <string name="username">Aditya Fakhri Riansyah</string>
+    <string name="story_title_description">Deskripsi</string>
+    <string name="img_story_description">Gambar Story</string>
+    <string name="not_found">Data tidak ditemukan</string>
+    <string name="error_fetch_data">Error fetch data</string>
+    <string name="name_detail">Detail Story - %s</string>
+    <string name="select_camera">Kamera</string>
+    <string name="select_gallery">Galeri</string>
+    <string name="error_upload">Error saat upload gambar</string>
+    <string name="permission_denied">Tidak mendapatkan izin</string>
+    <string name="choose_picture">Pilih gambar</string>
+    <string name="add_story">Tambah story</string>
+    <string name="upload">Unggah</string>
+    <string name="add_img_desc">Silakan masukkan berkas gambar dan deskripsi</string>
+    <string name="upload_success">Upload story berhasil</string>
+    <string name="upload_failed">Upload story gagal, silahkan coba lagi</string>
+    <string name="logout_sucess">Logout berhasil</string>
+
+</resources>

@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.provider.Settings
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
@@ -63,17 +64,20 @@ class MainActivity : AppCompatActivity() {
         val authViewModel = ViewModelProvider(this, ViewModelAuthFactory(pref))[AuthViewModel::class.java]
 
         when (menuItem.itemId) {
+            R.id.menu_add -> {
+                Intent(this, AddStoryActivity::class.java).also {
+                    startActivity(it)
+                }
+            }
+            R.id.menu_setting -> {
+                startActivity(Intent(Settings.ACTION_LOCALE_SETTINGS))
+            }
             R.id.menu_logout -> {
                 authViewModel.clearUserPreferences()
                 Toast.makeText(applicationContext, getString(R.string.logout_sucess), Toast.LENGTH_SHORT).show()
                 Intent(this, AuthActivity::class.java).also { intent ->
                     startActivity(intent)
                     finish()
-                }
-            }
-            R.id.menu_add -> {
-                Intent(this, AddStoryActivity::class.java).also {
-                    startActivity(it)
                 }
             }
         }

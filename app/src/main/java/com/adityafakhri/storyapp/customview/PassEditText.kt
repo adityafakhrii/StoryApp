@@ -44,7 +44,7 @@ class PassEditText : AppCompatEditText {
 
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
                 if (!s.isNullOrEmpty() && s.length < 8)
-                    error = context.getString(R.string.et_password_error_message)
+                    error = context.getString(R.string.password_invalid)
             }
         })
     }

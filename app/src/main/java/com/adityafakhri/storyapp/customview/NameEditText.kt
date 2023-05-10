@@ -34,7 +34,7 @@ class NameEditText : AppCompatEditText {
 
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
                 if (s!!.isEmpty())
-                    error = context.getString(R.string.et_name_error_message)
+                    error = context.getString(R.string.name_invalid)
             }
         })
     }

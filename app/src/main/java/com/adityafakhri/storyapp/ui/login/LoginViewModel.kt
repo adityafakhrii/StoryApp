@@ -15,10 +15,7 @@ class LoginViewModel(val context: Context) : ViewModel() {
 
     var loading = MutableLiveData(View.GONE)
     val error = MutableLiveData("")
-
     val loginResult = MutableLiveData<LoginResponse>()
-
-    private val TAG = LoginViewModel::class.simpleName
 
     fun checkLogin(email: String, password: String) {
         loading.postValue(View.VISIBLE)
@@ -36,5 +33,9 @@ class LoginViewModel(val context: Context) : ViewModel() {
                 error.postValue(t.message)
             }
         })
+    }
+
+    companion object{
+        const val TAG = "LoginViewModel"
     }
 }

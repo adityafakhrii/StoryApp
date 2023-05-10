@@ -15,13 +15,12 @@ import retrofit2.Callback
 import retrofit2.Response
 
 class MainViewModel(val context: Context) : ViewModel() {
+
     var loading = MutableLiveData(View.GONE)
+    var error = MutableLiveData("")
     private val _storyList = MutableLiveData<List<ListStoryItem>>()
     val storyList: LiveData<List<ListStoryItem>> = _storyList
 
-    var error = MutableLiveData("")
-
-    private val TAG = MainViewModel::class.simpleName
 
     fun getStoryList(token: String) {
         loading.postValue(View.VISIBLE)
@@ -37,8 +36,12 @@ class MainViewModel(val context: Context) : ViewModel() {
             override fun onFailure(call: Call<StoryResponse>, t: Throwable) {
                 loading.postValue(View.GONE)
                 Log.e(TAG, "onFailure Call: ${t.message}")
-                error.postValue("${context.getString(R.string.API_error_fetch_data)} : ${t.message}")
+                error.postValue("${context.getString(R.string.error_fetch_data)} : ${t.message}")
             }
         })
+    }
+
+    companion object{
+        const val TAG = "MainViewModel"
     }
 }
