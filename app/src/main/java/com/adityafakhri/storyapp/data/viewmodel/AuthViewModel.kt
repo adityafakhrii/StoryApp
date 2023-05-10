@@ -1,4 +1,4 @@
-package com.adityafakhri.storyapp.ui.auth
+package com.adityafakhri.storyapp.data.viewmodel
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel

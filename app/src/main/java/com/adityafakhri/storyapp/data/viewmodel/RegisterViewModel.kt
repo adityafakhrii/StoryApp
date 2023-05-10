@@ -1,4 +1,4 @@
-package com.adityafakhri.storyapp.ui.register
+package com.adityafakhri.storyapp.data.viewmodel
 
 import android.content.Context
 import android.util.Log

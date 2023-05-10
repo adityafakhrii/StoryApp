@@ -3,7 +3,6 @@ package com.adityafakhri.storyapp.data.viewmodel
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.adityafakhri.storyapp.data.source.local.AuthPreferences
-import com.adityafakhri.storyapp.ui.auth.AuthViewModel
 
 class ViewModelAuthFactory(private val pref: AuthPreferences) :
     ViewModelProvider.NewInstanceFactory() {

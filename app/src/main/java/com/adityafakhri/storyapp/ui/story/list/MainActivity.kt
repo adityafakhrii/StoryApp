@@ -19,7 +19,8 @@ import com.adityafakhri.storyapp.data.viewmodel.ViewModelGeneralFactory
 import com.adityafakhri.storyapp.databinding.ActivityMainBinding
 import com.adityafakhri.storyapp.ui.adapter.ListStoryAdapter
 import com.adityafakhri.storyapp.ui.auth.AuthActivity
-import com.adityafakhri.storyapp.ui.auth.AuthViewModel
+import com.adityafakhri.storyapp.data.viewmodel.AuthViewModel
+import com.adityafakhri.storyapp.data.viewmodel.MainViewModel
 import com.adityafakhri.storyapp.ui.story.add.AddStoryActivity
 
 class MainActivity : AppCompatActivity() {

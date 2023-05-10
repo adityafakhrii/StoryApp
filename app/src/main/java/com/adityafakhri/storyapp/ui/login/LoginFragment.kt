@@ -16,7 +16,8 @@ import com.adityafakhri.storyapp.data.source.local.AuthPreferences
 import com.adityafakhri.storyapp.data.source.local.dataStore
 import com.adityafakhri.storyapp.databinding.FragmentLoginBinding
 import com.adityafakhri.storyapp.ui.auth.AuthActivity
-import com.adityafakhri.storyapp.ui.auth.AuthViewModel
+import com.adityafakhri.storyapp.data.viewmodel.AuthViewModel
+import com.adityafakhri.storyapp.data.viewmodel.LoginViewModel
 import com.adityafakhri.storyapp.data.viewmodel.ViewModelAuthFactory
 import com.adityafakhri.storyapp.data.viewmodel.ViewModelGeneralFactory
 import com.adityafakhri.storyapp.ui.register.RegisterFragment

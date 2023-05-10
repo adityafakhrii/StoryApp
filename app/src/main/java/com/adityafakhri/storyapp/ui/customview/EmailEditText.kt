@@ -1,4 +1,4 @@
-package com.adityafakhri.storyapp.customview
+package com.adityafakhri.storyapp.ui.customview
 
 import android.content.Context
 import android.text.Editable

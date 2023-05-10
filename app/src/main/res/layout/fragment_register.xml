@@ -68,7 +68,7 @@
         app:layout_constraintTop_toBottomOf="@+id/messageTextView"
         app:startIconDrawable="@drawable/baseline_person_24">
 
-        <com.adityafakhri.storyapp.customview.NameEditText
+        <com.adityafakhri.storyapp.ui.customview.NameEditText
             android:id="@+id/nameEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -95,7 +95,7 @@
         app:layout_constraintTop_toBottomOf="@+id/et_name"
         app:startIconDrawable="@drawable/baseline_mail_outline_24">
 
-        <com.adityafakhri.storyapp.customview.EmailEditText
+        <com.adityafakhri.storyapp.ui.customview.EmailEditText
             android:id="@+id/emailEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -121,7 +121,7 @@
         app:layout_constraintTop_toBottomOf="@+id/et_email"
         app:startIconDrawable="@drawable/baseline_password_24">
 
-        <com.adityafakhri.storyapp.customview.PassEditText
+        <com.adityafakhri.storyapp.ui.customview.PassEditText
             android:id="@+id/passwordEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

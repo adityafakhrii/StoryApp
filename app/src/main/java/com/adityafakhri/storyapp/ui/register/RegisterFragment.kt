@@ -12,6 +12,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.adityafakhri.storyapp.utils.Const
 import com.adityafakhri.storyapp.R
+import com.adityafakhri.storyapp.data.viewmodel.RegisterViewModel
 import com.adityafakhri.storyapp.data.viewmodel.ViewModelGeneralFactory
 import com.adityafakhri.storyapp.databinding.FragmentRegisterBinding
 import com.adityafakhri.storyapp.ui.auth.AuthActivity
