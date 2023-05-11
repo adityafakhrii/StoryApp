@@ -10,7 +10,6 @@ import com.adityafakhri.storyapp.R
 import com.adityafakhri.storyapp.data.source.remote.response.ListStoryItem
 import com.adityafakhri.storyapp.data.source.remote.response.StoryResponse
 import com.adityafakhri.storyapp.data.source.remote.retrofit.ApiConfig
-import com.adityafakhri.storyapp.utils.Const
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -40,7 +39,7 @@ class StoryMapsViewModel(val context: Context) : ViewModel() {
 
             override fun onFailure(call: Call<StoryResponse>, t: Throwable) {
                 loading.postValue(View.GONE)
-                Log.e(MainViewModel.TAG, "onFailure Call: ${t.message}")
+                Log.e(TAG, "onFailure Call: ${t.message}")
                 error.postValue("${context.getString(R.string.error_fetch_data)} : ${t.message}")
             }
         })

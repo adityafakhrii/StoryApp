@@ -31,7 +31,6 @@ class AuthPreferences private constructor(private val dataStore: DataStore<Prefe
     }
 
     companion object {
-
         @Volatile
         private var INSTANCE: AuthPreferences? = null
         fun getInstance(dataStore: DataStore<Preferences>): AuthPreferences {

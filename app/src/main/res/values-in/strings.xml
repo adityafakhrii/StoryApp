@@ -4,11 +4,8 @@
 
     <!--    Login & Register-->
     <string name="login">Masuk</string>
-    <string name="email">Email</string>
-    <string name="password">Kata Sandi</string>
     <string name="message_login_page">Tapi, login dulu ya!</string>
     <string name="title_login">Sudah siap berbagi cerita belajarmu di Dicoding?</string>
-    <string name="login_success">Login berhasil</string>
     <string name="login_failed">Login gagal, silahkan coba lagi</string>
     <string name="text_create_account">Belum punya akun?</string>
     <string name="title_register">Silahkan daftar terlebih dahulu</string>
@@ -22,9 +19,9 @@
     <string name="login_button">Masuk</string>
     <string name="text_login">Sudah punya akun?</string>
     <string name="field_empty">Semua kolom harus diisi</string>
-    <string name="email_hint">Masukkan email anda...</string>
-    <string name="password_hint">Masukkan password anda...</string>
-    <string name="name_hint">Silahkan tulis nama anda...</string>
+    <string name="email_hint">Masukkan email anda…</string>
+    <string name="password_hint">Masukkan password anda…</string>
+    <string name="name_hint">Silahkan tulis nama anda…</string>
 
     <!--    Story-->
     <string name="logout">Keluar</string>
@@ -48,5 +45,6 @@
     <string name="menu_add">Tambah Cerita</string>
     <string name="menu_setting">Pengaturan Bahasa</string>
     <string name="menu_maps">Peta</string>
+    <string name="retry">Coba lagi</string>
 
 </resources>

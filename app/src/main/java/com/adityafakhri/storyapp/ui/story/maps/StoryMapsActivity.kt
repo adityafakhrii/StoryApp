@@ -15,8 +15,6 @@ import com.adityafakhri.storyapp.data.source.local.dataStore
 import com.adityafakhri.storyapp.data.viewmodel.*
 import com.adityafakhri.storyapp.databinding.ActivityStoryMapsBinding
 import com.adityafakhri.storyapp.utils.Const
-import com.google.android.gms.location.FusedLocationProviderClient
-import com.google.android.gms.location.LocationServices
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
@@ -26,20 +24,18 @@ import com.google.android.gms.maps.model.*
 class StoryMapsActivity : AppCompatActivity(), OnMapReadyCallback {
 
     private lateinit var mMap: GoogleMap
-    private lateinit var binding: ActivityStoryMapsBinding
+
+    private var _binding: ActivityStoryMapsBinding? = null
+    private val binding get() = _binding!!
 
     private var viewModel: StoryMapsViewModel? = null
     private var tokenKey = ""
 
-    private lateinit var fusedLocationClient: FusedLocationProviderClient
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        binding = ActivityStoryMapsBinding.inflate(layoutInflater)
+        _binding = ActivityStoryMapsBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        fusedLocationClient = LocationServices.getFusedLocationProviderClient(this)
-
 
         val actionBar = supportActionBar
         actionBar?.setDisplayHomeAsUpEnabled(true)

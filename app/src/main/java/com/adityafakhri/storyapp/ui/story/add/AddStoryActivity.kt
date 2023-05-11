@@ -95,7 +95,7 @@ class AddStoryActivity : AppCompatActivity() {
             val file = reduceFileImage(getFile as File)
             var isFilled = false
 
-            if (binding.etDescription.text.isNotEmpty() || (getFile != null)) {
+            if (binding.etDescription.text.isNotEmpty() && (getFile != null)) {
                 isFilled = true
             }
 

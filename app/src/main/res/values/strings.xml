@@ -2,11 +2,8 @@
 
     <!--    Login & Register-->
     <string name="login">Login</string>
-    <string name="email">Email</string>
-    <string name="password">Password</string>
     <string name="message_login_page">But, Login first!</string>
     <string name="title_login">Are you ready to share your learning stories in Dicoding?</string>
-    <string name="login_success">Login success</string>
     <string name="login_failed">Login failed, please try again</string>
     <string name="text_create_account">Don\'t have an account yet?</string>
     <string name="title_register">Please register first</string>
@@ -20,9 +17,9 @@
     <string name="login_button">Login</string>
     <string name="text_login">Already have an account?</string>
     <string name="field_empty">All fields must be filled in</string>
-    <string name="email_hint">Enter your e-mail...</string>
-    <string name="password_hint">Enter your password...</string>
-    <string name="name_hint">Please write your name...</string>
+    <string name="email_hint">Enter your e-mail…</string>
+    <string name="password_hint">Enter your password…</string>
+    <string name="name_hint">Please write your name…</string>
 
     <!--    Story-->
     <string name="logout">Logout</string>
@@ -48,5 +45,6 @@
     <string name="menu_setting">Languange Setting</string>
     <string name="menu_maps">Maps</string>
     <string name="title_activity_story_maps" translatable="false">Story Maps</string>
+    <string name="retry">Try again</string>
 
 </resources>

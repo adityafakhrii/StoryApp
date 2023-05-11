@@ -10,8 +10,6 @@ class ViewModelGeneralFactory(private val context: Context) : ViewModelProvider.
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
         if (modelClass.isAssignableFrom(LoginViewModel::class.java)) {
             return LoginViewModel(context) as T
-        } else if (modelClass.isAssignableFrom(MainViewModel::class.java)) {
-            return MainViewModel(context) as T
         } else if (modelClass.isAssignableFrom(RegisterViewModel::class.java)) {
             return RegisterViewModel(context) as T
         } else if (modelClass.isAssignableFrom(AddStoryViewModel::class.java)) {
