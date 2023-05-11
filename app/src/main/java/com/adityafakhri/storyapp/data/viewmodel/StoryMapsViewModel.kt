@@ -10,31 +10,37 @@ import com.adityafakhri.storyapp.R
 import com.adityafakhri.storyapp.data.source.remote.response.ListStoryItem
 import com.adityafakhri.storyapp.data.source.remote.response.StoryResponse
 import com.adityafakhri.storyapp.data.source.remote.retrofit.ApiConfig
+import com.adityafakhri.storyapp.utils.Const
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class MainViewModel(val context: Context) : ViewModel() {
+class StoryMapsViewModel(val context: Context) : ViewModel() {
 
-    var loading = MutableLiveData(View.GONE)
-    var error = MutableLiveData("")
     private val _storyList = MutableLiveData<List<ListStoryItem>>()
     val storyList: LiveData<List<ListStoryItem>> = _storyList
+//    val defaultLocation = MutableLiveData(Const.defaultLocation)
 
-    fun getStoryList(token: String) {
-        loading.postValue(View.VISIBLE)
-        val client = ApiConfig.getApiService().getListStory(token, 20)
+    val loading = MutableLiveData(View.GONE)
+    val error = MutableLiveData("")
+    val isError = MutableLiveData(true)
+
+    fun loadStoryLocationData(token: String) {
+        val client = ApiConfig.getApiService().getListStoryLocation(token, 100)
         client.enqueue(object : Callback<StoryResponse> {
             override fun onResponse(call: Call<StoryResponse>, response: Response<StoryResponse>) {
-                if (response.isSuccessful) _storyList.postValue(response.body()?.listStory)
-                else error.postValue("Error ${response.code()} : ${response.message()}")
-
-                loading.postValue(View.GONE)
+                if (response.isSuccessful) {
+                    isError.postValue(false)
+                    _storyList.postValue(response.body()?.listStory)
+                } else {
+                    isError.postValue(true)
+                    error.postValue("ERROR ${response.code()} : ${response.message()}")
+                }
             }
 
             override fun onFailure(call: Call<StoryResponse>, t: Throwable) {
                 loading.postValue(View.GONE)
-                Log.e(TAG, "onFailure Call: ${t.message}")
+                Log.e(MainViewModel.TAG, "onFailure Call: ${t.message}")
                 error.postValue("${context.getString(R.string.error_fetch_data)} : ${t.message}")
             }
         })

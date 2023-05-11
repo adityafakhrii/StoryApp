@@ -22,6 +22,7 @@ import com.adityafakhri.storyapp.ui.auth.AuthActivity
 import com.adityafakhri.storyapp.data.viewmodel.AuthViewModel
 import com.adityafakhri.storyapp.data.viewmodel.MainViewModel
 import com.adityafakhri.storyapp.ui.story.add.AddStoryActivity
+import com.adityafakhri.storyapp.ui.story.maps.StoryMapsActivity
 
 class MainActivity : AppCompatActivity() {
 
@@ -67,6 +68,11 @@ class MainActivity : AppCompatActivity() {
         when (menuItem.itemId) {
             R.id.menu_add -> {
                 Intent(this, AddStoryActivity::class.java).also {
+                    startActivity(it)
+                }
+            }
+            R.id.menu_maps -> {
+                Intent(this, StoryMapsActivity::class.java).also {
                     startActivity(it)
                 }
             }

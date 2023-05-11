@@ -45,5 +45,8 @@
     <string name="upload_success">Upload story berhasil</string>
     <string name="upload_failed">Upload story gagal, silahkan coba lagi</string>
     <string name="logout_sucess">Logout berhasil</string>
+    <string name="menu_add">Tambah Cerita</string>
+    <string name="menu_setting">Pengaturan Bahasa</string>
+    <string name="menu_maps">Peta</string>
 
 </resources>

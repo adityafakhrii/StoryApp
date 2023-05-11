@@ -37,12 +37,16 @@
     <string name="error_upload">Error saat upload gambar</string>
     <string name="permission_denied">Did not get permissions</string>
     <string name="choose_picture">Choose an image</string>
-    <string name="add_story">Add stories</string>
+    <string name="add_story">Add story</string>
     <string name="upload">Upload</string>
     <string name="add_img_desc">Please enter an image file and a description</string>
     <string name="upload_success">Story upload was successful</string>
     <string name="upload_failed">Story upload failed, please try again</string>
     <string name="logout_sucess">Logout successful</string>
     <string name="app_name">Story App</string>
+    <string name="menu_add">Add Story</string>
+    <string name="menu_setting">Languange Setting</string>
+    <string name="menu_maps">Maps</string>
+    <string name="title_activity_story_maps" translatable="false">Story Maps</string>
 
 </resources>
