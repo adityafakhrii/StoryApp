@@ -2,11 +2,11 @@ package com.adityafakhri.storyapp.ui.story.detail
 
 import android.annotation.SuppressLint
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.adityafakhri.storyapp.utils.Const
+import androidx.appcompat.app.AppCompatActivity
 import com.adityafakhri.storyapp.R
 import com.adityafakhri.storyapp.databinding.ActivityDetailStoryBinding
+import com.adityafakhri.storyapp.utils.Const
 import com.bumptech.glide.Glide
 
 class DetailStoryActivity : AppCompatActivity() {
@@ -23,7 +23,8 @@ class DetailStoryActivity : AppCompatActivity() {
 
         val img: String = intent.getData(Const.StoryDetail.ImageURL.name, "")
         val name: String = intent.getData(Const.StoryDetail.UserName.name, "Name")
-        val description: String = intent.getData(Const.StoryDetail.ContentDescription.name, "Description")
+        val description: String =
+            intent.getData(Const.StoryDetail.ContentDescription.name, "Description")
 
         val actionBar = supportActionBar
         actionBar?.setDisplayHomeAsUpEnabled(true)

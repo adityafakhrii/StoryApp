@@ -7,7 +7,11 @@ import com.adityafakhri.storyapp.data.database.StoryDatabase
 import com.adityafakhri.storyapp.data.source.remote.retrofit.ApiService
 import com.adityafakhri.storyapp.data.source.remote.room.StoryRepository
 
-class ViewModelStoryFactory(val context: Context, private val apiService: ApiService, val token:String) : ViewModelProvider.NewInstanceFactory() {
+class ViewModelStoryFactory(
+    val context: Context,
+    private val apiService: ApiService,
+    val token: String
+) : ViewModelProvider.NewInstanceFactory() {
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
         if (modelClass.isAssignableFrom(MainViewModel::class.java)) {
             val database = StoryDatabase.getDatabase(context)

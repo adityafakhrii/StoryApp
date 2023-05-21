@@ -6,10 +6,10 @@ import android.text.Editable
 import android.text.TextWatcher
 import android.text.method.PasswordTransformationMethod
 import android.util.AttributeSet
-import androidx.appcompat.widget.AppCompatEditText
 import com.adityafakhri.storyapp.R
+import com.google.android.material.textfield.TextInputEditText
 
-class PassEditText : AppCompatEditText {
+class PassEditText : TextInputEditText {
     constructor(context: Context) : super(context) {
         init()
     }

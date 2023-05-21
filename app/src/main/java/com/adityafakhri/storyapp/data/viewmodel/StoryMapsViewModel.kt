@@ -45,7 +45,7 @@ class StoryMapsViewModel(val context: Context) : ViewModel() {
         })
     }
 
-    companion object{
+    companion object {
         const val TAG = "MainViewModel"
     }
 }

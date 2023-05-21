@@ -2,12 +2,12 @@ package com.adityafakhri.storyapp.ui.story.list
 
 import android.annotation.SuppressLint
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.Settings
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -42,7 +42,8 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         val pref = AuthPreferences.getInstance(dataStore)
-        val authViewModel = ViewModelProvider(this, ViewModelAuthFactory(pref))[AuthViewModel::class.java]
+        val authViewModel =
+            ViewModelProvider(this, ViewModelAuthFactory(pref))[AuthViewModel::class.java]
 
         authViewModel.getUserPreferences(Const.UserPreferences.Token.name).observe(this) { token ->
             if (token != "Not Set") {
@@ -70,7 +71,8 @@ class MainActivity : AppCompatActivity() {
 
     override fun onOptionsItemSelected(menuItem: MenuItem): Boolean {
         val pref = AuthPreferences.getInstance(dataStore)
-        val authViewModel = ViewModelProvider(this, ViewModelAuthFactory(pref))[AuthViewModel::class.java]
+        val authViewModel =
+            ViewModelProvider(this, ViewModelAuthFactory(pref))[AuthViewModel::class.java]
 
         when (menuItem.itemId) {
             R.id.menu_add -> {
@@ -89,7 +91,11 @@ class MainActivity : AppCompatActivity() {
             }
             R.id.menu_logout -> {
                 authViewModel.clearUserPreferences()
-                Toast.makeText(applicationContext, getString(R.string.logout_sucess), Toast.LENGTH_SHORT).show()
+                Toast.makeText(
+                    applicationContext,
+                    getString(R.string.logout_sucess),
+                    Toast.LENGTH_SHORT
+                ).show()
                 Intent(this, AuthActivity::class.java).also { intent ->
                     startActivity(intent)
                     finish()
@@ -105,7 +111,8 @@ class MainActivity : AppCompatActivity() {
             setHasFixedSize(true)
             layoutManager = LinearLayoutManager(context)
             isNestedScrollingEnabled = false
-            adapter = listStoryAdapter.withLoadStateFooter(footer = LoadingStateAdapter { listStoryAdapter.retry() })
+            adapter =
+                listStoryAdapter.withLoadStateFooter(footer = LoadingStateAdapter { listStoryAdapter.retry() })
             smoothScrollToPosition(0)
         }
         listStoryAdapter.notifyDataSetChanged()

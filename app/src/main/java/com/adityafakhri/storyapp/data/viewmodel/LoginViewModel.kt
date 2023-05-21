@@ -35,7 +35,7 @@ class LoginViewModel(val context: Context) : ViewModel() {
         })
     }
 
-    companion object{
+    companion object {
         const val TAG = "LoginViewModel"
     }
 }

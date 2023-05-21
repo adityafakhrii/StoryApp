@@ -7,7 +7,11 @@ import com.adityafakhri.storyapp.data.source.remote.remotemediator.StoryRemoteMe
 import com.adityafakhri.storyapp.data.source.remote.response.ListStoryItem
 import com.adityafakhri.storyapp.data.source.remote.retrofit.ApiService
 
-class StoryRepository(private val storyDatabase: StoryDatabase, private val apiService: ApiService, private val token:String) {
+class StoryRepository(
+    private val storyDatabase: StoryDatabase,
+    private val apiService: ApiService,
+    private val token: String
+) {
     fun getStory(): LiveData<PagingData<ListStoryItem>> {
         @OptIn(ExperimentalPagingApi::class)
         return Pager(

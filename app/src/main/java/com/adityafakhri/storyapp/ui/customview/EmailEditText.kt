@@ -5,10 +5,10 @@ import android.text.Editable
 import android.text.TextWatcher
 import android.util.AttributeSet
 import android.util.Patterns
-import androidx.appcompat.widget.AppCompatEditText
 import com.adityafakhri.storyapp.R
+import com.google.android.material.textfield.TextInputEditText
 
-class EmailEditText : AppCompatEditText {
+class EmailEditText : TextInputEditText {
 
     constructor(context: Context) : super(context) {
         init()

@@ -21,8 +21,13 @@ class RegisterViewModel(val context: Context) : ViewModel() {
         loading.postValue(View.VISIBLE)
         val client = ApiConfig.getApiService().userRegister(name, email, password)
         client.enqueue(object : Callback<RegisterResponse> {
-            override fun onResponse(call: Call<RegisterResponse>, response: Response<RegisterResponse>) {
-                if (response.code() == 201) registerResult.postValue(response.body()) else error.postValue("ERROR ${response.code()} : ${response.message()}")
+            override fun onResponse(
+                call: Call<RegisterResponse>,
+                response: Response<RegisterResponse>
+            ) {
+                if (response.code() == 201) registerResult.postValue(response.body()) else error.postValue(
+                    "ERROR ${response.code()} : ${response.message()}"
+                )
                 loading.postValue(View.GONE)
             }
 
@@ -33,7 +38,8 @@ class RegisterViewModel(val context: Context) : ViewModel() {
             }
         })
     }
-    companion object{
+
+    companion object {
         const val TAG = "RegisterViewModel"
     }
 

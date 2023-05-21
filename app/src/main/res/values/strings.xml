@@ -46,5 +46,6 @@
     <string name="menu_maps">Maps</string>
     <string name="title_activity_story_maps" translatable="false">Story Maps</string>
     <string name="retry">Try again</string>
+    <string name="add_location">Add location</string>
 
 </resources>

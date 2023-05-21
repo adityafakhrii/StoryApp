@@ -11,6 +11,7 @@ import com.adityafakhri.storyapp.data.source.remote.retrofit.ApiConfig
 import okhttp3.MediaType.Companion.toMediaType
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
 import okhttp3.MultipartBody
+import okhttp3.RequestBody
 import okhttp3.RequestBody.Companion.asRequestBody
 import okhttp3.RequestBody.Companion.toRequestBody
 import retrofit2.Call
@@ -24,7 +25,13 @@ class AddStoryViewModel(val context: Context) : ViewModel() {
     var error = MutableLiveData("")
     var isSuccessUpload = MutableLiveData(false)
 
-    fun uploadNewStory(token: String, file: File, description: String) {
+    fun uploadNewStory(
+        token: String,
+        file: File,
+        description: String,
+        lat: RequestBody?,
+        lon: RequestBody?
+    ) {
         loading.postValue(View.VISIBLE)
 
         val desc = description.toRequestBody("text/plain".toMediaType())
@@ -35,9 +42,12 @@ class AddStoryViewModel(val context: Context) : ViewModel() {
             requestImageFile
         )
 
-        val client = ApiConfig.getApiService().addStory(token, imageMultipart, desc)
+        val client = ApiConfig.getApiService().addStory(token, imageMultipart, desc, lat, lon)
         client.enqueue(object : Callback<AddStoryResponse> {
-            override fun onResponse(call: Call<AddStoryResponse>, response: Response<AddStoryResponse>) {
+            override fun onResponse(
+                call: Call<AddStoryResponse>,
+                response: Response<AddStoryResponse>
+            ) {
                 if (response.isSuccessful) {
                     isSuccessUpload.postValue(true)
                 } else {
@@ -54,7 +64,7 @@ class AddStoryViewModel(val context: Context) : ViewModel() {
         })
     }
 
-    companion object{
+    companion object {
         const val TAG = "AddStoryViewModel"
     }
 }

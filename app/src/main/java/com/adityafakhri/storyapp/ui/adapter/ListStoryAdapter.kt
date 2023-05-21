@@ -12,7 +12,8 @@ import com.adityafakhri.storyapp.ui.story.detail.DetailStoryActivity
 import com.adityafakhri.storyapp.utils.Const
 import com.bumptech.glide.Glide
 
-class ListStoryAdapter : PagingDataAdapter<ListStoryItem, ListStoryAdapter.ListViewHolder>(DIFF_CALLBACK) {
+class ListStoryAdapter :
+    PagingDataAdapter<ListStoryItem, ListStoryAdapter.ListViewHolder>(DIFF_CALLBACK) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ListViewHolder {
         val binding = ItemStoryBinding.inflate(LayoutInflater.from(parent.context), parent, false)
@@ -20,22 +21,26 @@ class ListStoryAdapter : PagingDataAdapter<ListStoryItem, ListStoryAdapter.ListV
     }
 
     override fun onBindViewHolder(viewHolder: ListViewHolder, position: Int) {
-       getItem(position)?.let { viewHolder.bind(it) }
+        getItem(position)?.let { viewHolder.bind(it) }
     }
 
     companion object {
-        private val DIFF_CALLBACK = object : DiffUtil.ItemCallback<ListStoryItem>() {
+        val DIFF_CALLBACK = object : DiffUtil.ItemCallback<ListStoryItem>() {
             override fun areItemsTheSame(oldItem: ListStoryItem, newItem: ListStoryItem): Boolean {
                 return oldItem == newItem
             }
 
-            override fun areContentsTheSame(oldItem: ListStoryItem, newItem: ListStoryItem): Boolean {
+            override fun areContentsTheSame(
+                oldItem: ListStoryItem,
+                newItem: ListStoryItem
+            ): Boolean {
                 return oldItem.id == newItem.id
             }
         }
     }
 
-    inner class ListViewHolder(private val binding: ItemStoryBinding) : RecyclerView.ViewHolder(binding.root) {
+    inner class ListViewHolder(private val binding: ItemStoryBinding) :
+        RecyclerView.ViewHolder(binding.root) {
         fun bind(story: ListStoryItem) {
             with(binding) {
                 tvStoryUsername.text = story.name

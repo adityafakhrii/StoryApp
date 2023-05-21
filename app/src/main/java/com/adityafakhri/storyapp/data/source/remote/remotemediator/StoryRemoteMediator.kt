@@ -25,7 +25,10 @@ class StoryRemoteMediator(
         return InitializeAction.LAUNCH_INITIAL_REFRESH
     }
 
-    override suspend fun load(loadType: LoadType, state: PagingState<Int, ListStoryItem>): MediatorResult {
+    override suspend fun load(
+        loadType: LoadType,
+        state: PagingState<Int, ListStoryItem>
+    ): MediatorResult {
         val page = when (loadType) {
             LoadType.REFRESH -> {
                 // if adapter refresh (swipe refresh) -> jump to latest data (page 1)

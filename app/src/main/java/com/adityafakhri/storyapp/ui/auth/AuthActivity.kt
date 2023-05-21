@@ -1,7 +1,7 @@
 package com.adityafakhri.storyapp.ui.auth
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import com.adityafakhri.storyapp.R
 import com.adityafakhri.storyapp.databinding.ActivityAuthBinding
 import com.adityafakhri.storyapp.ui.login.LoginFragment

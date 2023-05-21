@@ -1,5 +1,6 @@
 package com.adityafakhri.storyapp.ui.story.maps
 
+import android.Manifest.permission
 import android.content.pm.PackageManager
 import android.content.res.Resources
 import android.os.Bundle
@@ -12,14 +13,19 @@ import androidx.lifecycle.ViewModelProvider
 import com.adityafakhri.storyapp.R
 import com.adityafakhri.storyapp.data.source.local.AuthPreferences
 import com.adityafakhri.storyapp.data.source.local.dataStore
-import com.adityafakhri.storyapp.data.viewmodel.*
+import com.adityafakhri.storyapp.data.viewmodel.AuthViewModel
+import com.adityafakhri.storyapp.data.viewmodel.StoryMapsViewModel
+import com.adityafakhri.storyapp.data.viewmodel.ViewModelAuthFactory
+import com.adityafakhri.storyapp.data.viewmodel.ViewModelGeneralFactory
 import com.adityafakhri.storyapp.databinding.ActivityStoryMapsBinding
 import com.adityafakhri.storyapp.utils.Const
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
-import com.google.android.gms.maps.model.*
+import com.google.android.gms.maps.model.LatLng
+import com.google.android.gms.maps.model.MapStyleOptions
+import com.google.android.gms.maps.model.MarkerOptions
 
 class StoryMapsActivity : AppCompatActivity(), OnMapReadyCallback {
 
@@ -46,9 +52,11 @@ class StoryMapsActivity : AppCompatActivity(), OnMapReadyCallback {
         mapFragment.getMapAsync(this)
 
         val pref = AuthPreferences.getInstance(dataStore)
-        val authViewModel = ViewModelProvider(this, ViewModelAuthFactory(pref))[AuthViewModel::class.java]
+        val authViewModel =
+            ViewModelProvider(this, ViewModelAuthFactory(pref))[AuthViewModel::class.java]
 
-        viewModel = ViewModelProvider(this, ViewModelGeneralFactory(this))[StoryMapsViewModel::class.java]
+        viewModel =
+            ViewModelProvider(this, ViewModelGeneralFactory(this))[StoryMapsViewModel::class.java]
 
         authViewModel.getUserPreferences(Const.UserPreferences.Token.name).observe(this) { token ->
             if (token != "Not Set") {
@@ -92,19 +100,23 @@ class StoryMapsActivity : AppCompatActivity(), OnMapReadyCallback {
             if (isGranted) {
                 getMyLocation()
             } else {
-                Toast.makeText(applicationContext, getString(R.string.permission_denied), Toast.LENGTH_SHORT).show()
+                Toast.makeText(
+                    applicationContext,
+                    getString(R.string.permission_denied),
+                    Toast.LENGTH_SHORT
+                ).show()
             }
         }
 
     private fun getMyLocation() {
         if (ContextCompat.checkSelfPermission(
                 this.applicationContext,
-                android.Manifest.permission.ACCESS_FINE_LOCATION
+                permission.ACCESS_FINE_LOCATION
             ) == PackageManager.PERMISSION_GRANTED
         ) {
             mMap.isMyLocationEnabled = true
         } else {
-            requestPermissionLauncher.launch(android.Manifest.permission.ACCESS_FINE_LOCATION)
+            requestPermissionLauncher.launch(permission.ACCESS_FINE_LOCATION)
         }
     }
 
